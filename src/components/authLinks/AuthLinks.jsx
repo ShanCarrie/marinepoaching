@@ -3,12 +3,9 @@ import Link from "next/link";
 import styles from "./authLinks.module.css";
 import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
-
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
-
-  const { status } = useSession();
-
+  const { status, data: session } = useSession(); // Destructure both status and session
   return (
     <>
       {status === "unauthenticated" ? (
@@ -17,10 +14,12 @@ const AuthLinks = () => {
         </Link>
       ) : (
         <>
-          <Link href="/write" className={styles.link}>
-            Write
-          </Link>
-          <span className={styles.link} onClick={signOut}>
+          {session?.user?.role === "admin" && (
+            <Link href="/write" className={styles.link}>
+              Write
+            </Link>
+          )}
+          <span className={styles.link} onClick={() => signOut()}>
             Logout
           </span>
         </>
@@ -35,12 +34,19 @@ const AuthLinks = () => {
           <Link href="/">Homepage</Link>
           <Link href="/">About</Link>
           <Link href="/">Contact</Link>
-          {status === "notauthenticated" ? (
+          {status === "unauthenticated" ? (
             <Link href="/login">Login</Link>
           ) : (
             <>
-              <Link href="/write">Write</Link>
-              <span className={styles.link}>Logout</span>
+              {session?.user?.role === "admin" && (
+                <Link href="/write" className={styles.link}>
+                  Write
+                </Link>
+              )}
+              {/* This is where I moved the Logout button outside the admin condition */}
+              <span className={styles.link} onClick={() => signOut()}>
+                Logout
+              </span>
             </>
           )}
         </div>
@@ -48,5 +54,4 @@ const AuthLinks = () => {
     </>
   );
 };
-
 export default AuthLinks;

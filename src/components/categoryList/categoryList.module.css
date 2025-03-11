@@ -23,23 +23,23 @@
   border-radius: 10px;
 }
 
-.category.style {
+.category.marinelife {
   background-color: #57c4ff31;
 }
 
-.category.fashion {
+.category.sustainability {
   background-color: #da85c731;
 }
 
-.category.food {
+.category.poaching {
   background-color: #7fb88133;
 }
 
-.category.travel {
+.category.conservation {
   background-color: #ff795736;
 }
 
-.category.culture {
+.category.pollution {
   background-color: #ffb04f45;
 }
 

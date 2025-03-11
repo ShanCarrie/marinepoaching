@@ -1,17 +1,20 @@
 .container {
-  width: 40px;
-  height: 20px;
+  width: 55px;
+  height: 25px;
   border-radius: 50px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  background-color: #0f172a; /* Default background */
+  transition: background-color 0.3s ease-in-out; /* Smooth background transition */
 }
 
 .ball {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   position: absolute;
+  transition: all 0.6s ease-in-out; /* Smooth ball movement */
 }

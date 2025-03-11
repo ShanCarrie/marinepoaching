@@ -12,23 +12,23 @@
   font-size: 14px;
 }
 
-.categoryItem.style {
+.categoryItem.marinelife {
   background-color: #57c4ff31;
 }
 
-.categoryItem.fashion {
+.categoryItem.sustainability {
   background-color: #da85c731;
 }
 
-.categoryItem.food {
+.categoryItem.poaching {
   background-color: #7fb88133;
 }
 
-.categoryItem.travel {
+.categoryItem.conservation {
   background-color: #ff795736;
 }
 
-.categoryItem.culture {
+.categoryItem.pollution {
   background-color: #ffb04f45;
 }
 

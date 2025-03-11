@@ -49,3 +49,51 @@ export const POST = async (req) => {
     );
   }
 };
+
+// DELETE COMMENT
+export const DELETE = async (req) => {
+  const session = await getAuthSession();
+
+  if (!session) {
+    return new NextResponse(
+      JSON.stringify({ message: "Not Authenticated!" }, { status: 401 })
+    );
+  }
+
+  const { searchParams } = new URL(req.url);
+  const id = searchParams.get("id");
+
+  if (!id) {
+    return new NextResponse(
+      JSON.stringify({ message: "Comment ID is required!" }, { status: 400 })
+    );
+  }
+
+  try {
+    const comment = await prisma.comment.findUnique({
+      where: { id: id },
+    });
+
+    if (session.user.email === comment.userEmail || session.user.isAdmin) {
+      await prisma.comment.delete({
+        where: { id: id },
+      });
+
+      return new NextResponse(
+        JSON.stringify(
+          { message: "Comment deleted successfully!" },
+          { status: 200 }
+        )
+      );
+    } else {
+      return new NextResponse(
+        JSON.stringify({ message: "Unauthorized action!" }, { status: 403 })
+      );
+    }
+  } catch (err) {
+    console.log(err);
+    return new NextResponse(
+      JSON.stringify({ message: "Something went wrong!" }, { status: 500 })
+    );
+  }
+};

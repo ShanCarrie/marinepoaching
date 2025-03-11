@@ -9,17 +9,21 @@
   flex: 1;
   height: 350px;
   position: relative;
+  width: 100%; /* Add this line to ensure it takes full width */
+  overflow: hidden;
 }
 
 .image {
   object-fit: cover;
+  width: 100%; /* Optional, but helps in some cases */
+  height: 100%;
 }
 
 .textContainer {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .date {
@@ -43,8 +47,22 @@
   padding: 2px 0px;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .imageContainer {
-    display: none;
+    height: 250px; /* Visible height on smaller screens */
+    width: 100%; /* Ensures image fills container */
+    display: block;
+    min-height: 250px;
+  }
+
+  .image {
+    object-fit: cover;
+    width: 100%; /* Optional, but helps in some cases */
+    height: 100%;
   }
 }

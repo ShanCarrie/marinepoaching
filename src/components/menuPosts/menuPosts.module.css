@@ -39,19 +39,19 @@
   width: max-content;
 }
 
-.category.travel {
+.conservation {
   background-color: #ff7857;
 }
 
-.culture {
+.pollution {
   background-color: #ffb14f;
 }
 
-.food {
+.poaching {
   background-color: #7fb881;
 }
 
-.fashion {
+.sustainability {
   background-color: #ff7887;
 }
 
@@ -59,7 +59,7 @@
   background-color: #775aec;
 }
 
-.style {
+.marinelife {
   background-color: #789cff;
 }
 
@@ -75,4 +75,22 @@
 
 .date {
   color: gray;
+}
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid crimson; /* Crimson */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto; /* Center the spinner */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

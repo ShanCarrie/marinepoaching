@@ -8,8 +8,8 @@ const Footer = () => {
     <div className={styles.container}>
       <div className={styles.info}>
         <div className={styles.logo}>
-          <Image src="/logo.png" alt="lama blog" width={50} height={50} />
-          <h1 className={styles.logoText}>Lamablog</h1>
+          <Image src="/fin.jpg" alt="lama blog" width={50} height={50} />
+          <h1 className={styles.logoText}>Marine Poaching</h1>
         </div>
         <p className={styles.desc}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
@@ -17,34 +17,21 @@ const Footer = () => {
           porro sequi, totam minima consequuntur, aspernatur deleniti vero
           repellendus dorales.
         </p>
-        <div className={styles.icons}>
-          <Image src="/facebook.png" alt="" width={18} height={18} />
-          <Image src="/instagram.png" alt="" width={18} height={18} />
-          <Image src="/tiktok.png" alt="" width={18} height={18} />
-          <Image src="/youtube.png" alt="" width={18} height={18} />
-        </div>
+        <p className={styles.desc}>Marine Poaching 2025 ©</p>
+        <p className={styles.desc}>All rights reserved.</p>
       </div>
       <div className={styles.links}>
         <div className={styles.list}>
+          <span className={styles.listTitle}>Tags</span>
+          <Link href="/">Marine Life</Link>
+          <Link href="/">Sustainability</Link>
+          <Link href="/">Poaching</Link>
+          <Link href="/">Conservation</Link>
+          <Link href="/">Pollution</Link>
+        </div>
+        <div className={styles.list}>
           <span className={styles.listTitle}>Links</span>
           <Link href="/">Homepage</Link>
-          <Link href="/">Blog</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
-        </div>
-        <div className={styles.list}>
-          <span className={styles.listTitle}>Tags</span>
-          <Link href="/">Style</Link>
-          <Link href="/">Fashion</Link>
-          <Link href="/">Coding</Link>
-          <Link href="/">Travel</Link>
-        </div>
-        <div className={styles.list}>
-          <span className={styles.listTitle}>Social</span>
-          <Link href="/">Facebook</Link>
-          <Link href="/">Instagram</Link>
-          <Link href="/">Tiktok</Link>
-          <Link href="/">Youtube</Link>
         </div>
       </div>
     </div>

@@ -45,7 +45,14 @@ export const POST = async (req) => {
   try {
     const body = await req.json();
     const post = await prisma.post.create({
-      data: { ...body, userEmail: session.user.email },
+      data: {
+        title,
+        desc: value,
+        img: media,
+        catSlug: catSlug || "style", // Ensure you're passing the right category slug
+        slug: slugify(title), // Explicitly set the slug
+        userEmail: session.user.email,
+      },
     });
 
     return new NextResponse(JSON.stringify(post, { status: 200 }));

@@ -6,7 +6,16 @@
   font-size: 96px;
   font-weight: 300;
 }
-
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .post {
   margin-top: 60px;
   display: flex;
@@ -16,8 +25,11 @@
 
 .imgContainer {
   flex: 1;
-  height: 500px;
-  position: relative;
+  width: 100%; /* Ensure full width */
+  height: 500px; /* Default height for desktop */
+  position: relative; /* Needed for Next.js Image with "fill" */
+  overflow: hidden; /* Prevent overflow issues */
+  min-height: 200px;
 }
 
 .image {
@@ -58,20 +70,39 @@
   .title {
     font-size: 64px;
   }
-
-  .imgContainer {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 768px) {
   .title {
     font-size: 48px;
   }
+  .post {
+    flex-direction: column; /* Stack image and text vertically */
+    gap: 20px; /* Smaller gap on smaller screens */
+    text-align: center; /* Optional: Center text for better UX */
+  }
+
+  .imgContainer {
+    order: 1; /* Moves image under the title */
+    height: 300px; /* Smaller height for smaller screens */
+    width: 100%; /* Ensure full width */
+  }
+
+  .textContainer {
+    order: 2; /* Moves text above the image */
+  }
+  .button {
+    align-self: center;
+  }
 }
 
 @media screen and (max-width: 640px) {
   .title {
     font-size: 36px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .imgContainer {
+    height: 200px; /* Smallest height for mobile devices */
   }
 }
