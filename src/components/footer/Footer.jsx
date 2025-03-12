@@ -11,12 +11,7 @@ const Footer = () => {
           <Image src="/fin.jpg" alt="lama blog" width={50} height={50} />
           <h1 className={styles.logoText}>Marine Poaching</h1>
         </div>
-        <p className={styles.desc}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
-          necessitatibus similique aspernatur obcaecati veritatis. Aperiam cum
-          porro sequi, totam minima consequuntur, aspernatur deleniti vero
-          repellendus dorales.
-        </p>
+
         <p className={styles.desc}>Marine Poaching 2025 ©</p>
         <p className={styles.desc}>All rights reserved.</p>
       </div>

@@ -20,13 +20,14 @@ const Featured = () => {
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet alim consectetur adipisicing elit.
+            The Hidden Crisis: Marine Poaching Threatening Our Oceans
           </h1>
           <p className={styles.postDesc}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Cupiditate, quam nisi magni ea laborum inventore voluptatum
-            laudantium repellat ducimus unde aspernatur fuga. Quo, accusantium
-            quisquam! Harum unde sit culpa debitis.
+            Marine poaching is pushing many ocean species to the brink of
+            extinction. Illegal fishing and wildlife exploitation continue to
+            damage delicate marine ecosystems. By shedding light on these
+            crimes, we can drive action and protect marine biodiversity for
+            future generations.
           </p>
           <button className={styles.button}>Read More</button>
         </div>
