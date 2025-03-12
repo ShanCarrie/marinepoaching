@@ -4,18 +4,18 @@ export const generateRss = async (posts) => {
   const feed = new Feed({
     title: "Marine Poaching Blog",
     description: "Latest news and articles on Marine Poaching",
-    id: "http://localhost:3000/",
-    link: "http://localhost:3000/",
+    id: "https://marinepoachingg.netlify.app/",
+    link: "https://marinepoachingg.netlify.app/",
     language: "en",
-    favicon: "http://localhost:3000/favicon.ico",
+    favicon: "https://marinepoachingg.netlify.app/favicon.ico",
     copyright: `All rights reserved ${new Date().getFullYear()}`,
   });
 
   posts.forEach((item) => {
     feed.addItem({
       title: item.title,
-      id: `http://localhost:3000/blog/posts/${item.slug}`,
-      link: `http://localhost:3000/blog/posts/${item.slug}`,
+      id: `https://marinepoachingg.netlify.app/blog/posts/${item.slug}`,
+      link: `https://marinepoachingg.netlify.app/blog/posts/${item.slug}`,
       description: item.desc,
       date: new Date(item.createdAt),
     });

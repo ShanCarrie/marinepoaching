@@ -25,7 +25,7 @@ const Comments = ({ postSlug }) => {
   const user = session?.user;
 
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    `https://marinepoachingg.netlify.app/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 
