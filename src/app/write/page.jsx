@@ -137,16 +137,6 @@ const WritePage = () => {
             <label htmlFor="image" className={styles.addButton}>
               <Image src="/image.png" alt="" width={16} height={16} />
             </label>
-            <input
-              type="file"
-              id="video"
-              accept="video/*"
-              onChange={(e) => setFile(e.target.files[0])}
-              style={{ display: "none" }}
-            />
-            <label htmlFor="video" className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
-            </label>
           </div>
         )}
         {uploading && (

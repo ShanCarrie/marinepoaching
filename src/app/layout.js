@@ -21,6 +21,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <title>Marine Poaching</title>
+        <meta name="description" content="The best blog app!" />
+      </head>
+
       <body className={inter.className}>
         <AuthProvider>
           <ThemeContextProvider>
