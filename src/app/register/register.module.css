@@ -55,7 +55,7 @@
   background: #db4437;
   color: white;
   border: none;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
@@ -64,17 +64,18 @@
 .socialButton:hover {
   background: #c1351d;
 }
-.register {
+.login {
   color: #6e8efb;
   cursor: pointer;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
-.register:hover {
+.login:hover {
   color: #5a7af5;
 }
 .account {
   color: black;
+  padding-top: 10px;
 }
 @keyframes fadeIn {
   from {
@@ -99,4 +100,25 @@
     font-weight: 400;
     font-size: 14px;
   }
+}
+.error {
+  color: #ff4d4d;
+  background: #ffe6e6;
+  border: 1px solid #ff4d4d;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.success {
+  color: #2d9c2d;
+  background: #e6ffe6;
+  border: 1px solid #2d9c2d;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 14px;
 }

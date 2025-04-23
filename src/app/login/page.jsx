@@ -54,7 +54,7 @@ const LoginPage = () => {
         <div className={styles.socialButton} onClick={() => signIn("google")}>
           Sign in with Google
         </div>
-        <div>
+        <div className={styles.account}>
           Don&apos;t have an account?{" "}
           <span
             className={styles.register}

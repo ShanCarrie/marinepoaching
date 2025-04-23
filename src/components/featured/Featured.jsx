@@ -29,7 +29,6 @@ const Featured = () => {
             crimes, we can drive action and protect marine biodiversity for
             future generations.
           </p>
-          <button className={styles.button}>Read More</button>
         </div>
       </div>
     </div>
