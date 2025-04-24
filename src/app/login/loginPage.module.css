@@ -2,11 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
   background: linear-gradient(135deg, #1e3c72, #5b7fbe);
 }
+
 .wrapper {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   padding: 2rem;
   border-radius: 12px;
   background: #ffffff;
@@ -14,68 +17,80 @@
   text-align: center;
   animation: fadeIn 0.5s ease-in-out;
 }
+
 .form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .input {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
-  transition: all 0.3s ease-in-out;
   font-size: 16px;
+  transition: all 0.3s ease-in-out;
 }
+
 .input:focus {
   border-color: #6e8efb;
   box-shadow: 0 0 10px rgba(110, 142, 251, 0.4);
 }
+
 .button {
   padding: 12px;
   background: #6e8efb;
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
   font-size: 16px;
+  cursor: pointer;
   transition: background 0.3s ease-in-out;
 }
+
 .button:hover {
   background: #5a7af5;
 }
+
 .error {
   color: #e74c3c;
   font-size: 14px;
   margin-top: -10px;
 }
+
 .socialButton {
   margin-top: 1rem;
   padding: 12px;
   background: #db4437;
   color: white;
   border: none;
-  margin-bottom: 20px;
   border-radius: 8px;
-  cursor: pointer;
+  margin-bottom: 20px;
   font-size: 16px;
+  cursor: pointer;
   transition: background 0.3s ease-in-out;
 }
+
 .socialButton:hover {
   background: #c1351d;
 }
+
 .register {
   color: #6e8efb;
   cursor: pointer;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
+
 .register:hover {
   color: #5a7af5;
 }
+
 .account {
   color: black;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -86,17 +101,37 @@
     transform: translateY(0);
   }
 }
+
+/* 📱 Responsive styles */
 @media screen and (max-width: 768px) {
   .wrapper {
-    padding: 50px 100px;
+    padding: 1.5rem;
+  }
+
+  .button,
+  .input,
+  .socialButton {
+    font-size: 15px;
   }
 }
-@media screen and (max-width: 640px) {
+
+@media screen and (max-width: 480px) {
   .wrapper {
-    padding: 30px;
+    padding: 1rem;
   }
+
+  .button,
+  .input,
   .socialButton {
-    font-weight: 400;
     font-size: 14px;
+    padding: 10px;
+  }
+
+  .form {
+    gap: 0.75rem;
+  }
+
+  .socialButton {
+    font-size: 13px;
   }
 }

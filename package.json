@@ -25,6 +25,7 @@
     "react-dom": "18.2.0",
     "react-quill": "^2.0.0",
     "react-toastify": "^11.0.5",
+    "rss": "^1.2.2",
     "swr": "^2.3.2"
   },
   "devDependencies": {

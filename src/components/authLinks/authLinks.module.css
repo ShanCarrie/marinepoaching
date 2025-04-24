@@ -1,36 +1,64 @@
-.link {
-  cursor: pointer;
-}
-
 .burger {
-  width: 20px;
-  height: 16px;
+  width: 25px;
+  height: 18px;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  display: none;
+  z-index: 1000;
+  padding: 4px;
 }
 
 .line {
-  width: 100%;
   height: 2px;
   background-color: var(--textColor);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.link {
+  color: var(--textColor);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.desktopLinks {
+  display: flex;
+  gap: 20px;
+}
+.link:hover {
+  color: #0070f3;
 }
 
 .responsiveMenu {
   position: absolute;
   top: 100px;
   left: 0;
-  background-color: var(--bg);
-  height: calc(100vh - 100px);
   width: 100%;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.8); /* translucent white */
+  backdrop-filter: blur(10px); /* glass effect */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-  font-size: 36px;
+  gap: 15px;
+  font-size: 22px;
+  padding: 20px 0;
+  border-radius: 0 0 16px 16px;
   z-index: 999;
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.responsiveMenu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media screen and (max-width: 640px) {
@@ -38,7 +66,7 @@
     display: flex;
   }
 
-  .link {
+  .desktopLinks {
     display: none;
   }
 }

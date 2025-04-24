@@ -40,27 +40,23 @@
 }
 
 .conservation {
-  background-color: #ff7857;
+  background-color: #48cae4; /* Deep Ocean Blue */
 }
 
 .pollution {
-  background-color: #ffb14f;
+  background-color: #00b4d8; /* Aqua Blue */
 }
 
 .poaching {
-  background-color: #7fb881;
+  background-color: #0096c7; /* Cerulean Blue */
 }
 
 .sustainability {
-  background-color: #ff7887;
-}
-
-.coding {
-  background-color: #775aec;
+  background-color: #0077b6; /* Soft Marine Blue */
 }
 
 .marinelife {
-  background-color: #789cff;
+  background-color: #90e0ef; /* Light Sea Blue */
 }
 
 .postTitle {
