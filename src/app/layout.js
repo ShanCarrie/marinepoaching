@@ -27,8 +27,8 @@ export default function RootLayout({ children }) {
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="RSS"
-          href="/rss.xml"
+          title="Marine Poaching RSS Feed"
+          href="/rss"
         />
         <title>Marine Poaching</title>
         <meta name="description" content="The best blog app!" />

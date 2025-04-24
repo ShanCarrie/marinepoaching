@@ -1,19 +1,17 @@
 import { NextResponse } from "next/server";
-import { Feed } from "rss";
-import prisma from "@/utils/connect"; // Adjust path as needed
+import prisma from "@/utils/connect";
+const RSS = require("rss"); // <-- Fixed import
 
 export const GET = async () => {
   try {
-    // 1. Get posts
     const posts = await prisma.post.findMany({
       orderBy: { createdAt: "desc" },
       take: 20,
     });
 
-    // 2. Create feed
-    const feed = new Feed({
+    const feed = new RSS({
       title: "Marine Poaching Blog",
-      description: "Marine conservation insights and updates",
+      description: "Marine conservation stories and updates",
       id: "https://marinepoaching.com",
       link: "https://marinepoaching.com",
       language: "en",
@@ -21,25 +19,24 @@ export const GET = async () => {
       updated: new Date(),
     });
 
-    posts.forEach((post) => {
-      feed.addItem({
-        title: post.title,
-        id: `https://marinepoaching.com/posts/${post.slug}`,
-        link: `https://marinepoaching.com/posts/${post.slug}`,
-        description: post.desc || "No description available",
-        date: new Date(post.createdAt),
+    posts.forEach((item) => {
+      feed.item({
+        title: item.title,
+        guid: item.slug,
+        url: `https://marinepoaching.com/posts/${item.slug}`,
+        description: item.desc?.substring(0, 180) || "No description.",
+        date: new Date(item.createdAt),
       });
     });
 
-    // 3. Return response
-    return new NextResponse(feed.rss2(), {
+    return new NextResponse(feed.xml(), {
       status: 200,
       headers: {
-        "Content-Type": "application/rss+xml",
+        "Content-Type": "text/rss+xml",
       },
     });
   } catch (err) {
-    console.error("RSS Feed Error:", err);
-    return new NextResponse("Failed to generate RSS feed", { status: 500 });
+    console.error("RSS error:", err);
+    return new NextResponse("Error generating RSS feed", { status: 500 });
   }
 };
